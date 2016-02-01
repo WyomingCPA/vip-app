@@ -1,0 +1,11 @@
+{% extends "moderation/base.html" %}
+{% load render_table from django_tables2 %}
+{% block content %}
+  <div class="box box-info">
+    <div class="table-responsive">
+ {% render_table list_check_order_moderation %}
+    </div>
+  </div>
+   
+{% endblock %}
+

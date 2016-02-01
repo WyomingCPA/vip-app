@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>Responsive website template for mobile app</title>
+    <!-- Meta -->
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>  
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{% static 'index/assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'index/assets/css/style.css' %}">
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="{% static 'index/assets/plugins/font-awesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'index/assets/plugins/flexslider/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'index/assets/plugins/animate-css/animate.min.css' %}">
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="{% static 'index/assets/css/styles.css' %}">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head> 
+
+<body data-spy="scroll">
+    <!-- ******HEADER****** --> 
+    <header id="top" class="header navbar-fixed-top">  
+        <div class="container">            
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                    <!--<img id="logo-image" class="logo-image" src="" alt="Logo"> -->
+                    <span class="logo-title">VipApp</span>
+                </a>
+            </h1><!--//logo-->              
+            <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->            
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                       	{% load menubuilder %}{% menu indexMenu %}
+		        {% for item in menuitems %}<li class="nav-item"><a {% if item.url != '/accounts/login/' %} class="scrollto" {% endif %} href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} {% endif %}>{{ item.title }}</a></li>
+			{% endfor %}
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->           
+        </div>
+    </header><!--//header-->
+    
+    <!-- ******PROMO****** --> 
+    <section id="promo" class="promo section offset-header has-pattern">
+        <div class="container">
+            <div class="row">
+                <div class="overview col-md-8 col-sm-12 col-xs-12">
+                    <h2 class="title">Зарабатывай, устанавливая приложения</h2>
+                    <ul class="summary">
+                        <li>Устанавливай интересные приложения на своем телефоне</li>
+                        <li>Зарабатывай играя</li>
+                        <li>Выводи средтсва на телефон, WebMoney</li> 
+                    </ul>
+                    <div class="download-area">
+                        <ul class="btn-group list-inline">
+                            <li class="android-btn"><a href="#">Get it from Google Play</a></li>
+                        </ul>
+                        <div class="note text-center">
+                            <p>Зработай 5% на партнерской программе <br /></p>
+                            <span class="left-arrow"></span>
+                            <span class="right-arrow"></span>
+                        </div><!--//note-->
+                    </div>
+                </div><!--//overview-->
+                
+                <!--// iPhone starts -->
+                <div class="phone iphone iphone-black col-md-4 col-sm-12 col-xs-12 ">
+                    <div class="iphone-holder phone-holder">
+                        <div class="iphone-holder-inner">
+                            <div class="slider flexslider">
+                                <ul class="slides">
+                                    <li>
+                                        <img src="{% static 'index/assets/images/iphone/iphone-slide-1.png' %}"  alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="{% static 'index/assets/images/iphone/iphone-slide-2.png' %}"  alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="{% static 'index/assets/images/iphone/iphone-slide-3.png' %}"  alt="" />
+                                    </li>
+                                </ul><!--//slides-->
+                            </div><!--//flexslider-->   
+                        </div><!--//iphone-holder-inner-->                    
+                    </div><!--//iphone-holder-->                   
+                </div><!--//iphone-->  
+                <!--// iPhone ends -->                                           
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//promo-->
+    
+    <!-- ******FEATURES****** --> 
+    <section id="features" class="features section">
+        <div class="container">
+            <div class="row">
+                <h2 class="title text-center sr-only">Как это работает?</h2>
+                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                    <div class="icon">
+                        <i class="fa fa-cloud-upload"></i>                
+                    </div><!--//icon-->
+                    <div class="content">
+                        <h3 class="title">Скачивай</h3>
+                        <p>Выбирай приложения из списка, загружай их к себе на устройство и получай за это деньги. </p>  
+                        <button class="modal-trigger btn btn-link" data-toggle="modal" data-target="#feature-modal-1">Регистрация</button>
+                    </div><!--//content-->               
+                </div><!--//item-->
+                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                    <div class="icon">
+                        <i class="fa fa-rocket"></i>                
+                    </div><!--//icon-->
+                    <div class="content">
+                        <h3 class="title">Регистрируйся</h3>
+                        <p>Укажи данные верно — на почту напомним о новых приложениях, а на телефон будешь выводить деньги.</p>   
+                        <button class="modal-trigger btn btn-link" data-toggle="modal" data-target="#feature-modal-1">Регистрация</button>
+                    </div><!--//content-->               
+                </div><!--//item-->
+                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                    <div class="icon">
+                        <i class="fa fa-users"></i>                
+                    </div><!--//icon-->
+                    <div class="content">
+                        <h3 class="title">Зарабатывай</h3>
+                        <p>Любую сумму со счета можно вывести на баланс мобильного телефона или QIWI-кошелек </p> 
+                        <button class="modal-trigger btn btn-link" data-toggle="modal" data-target="#feature-modal-1">Регистрация</button>  
+                    </div><!--//content-->               
+                </div><!--//item-->
+                <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
+                    <div class="icon">
+                        <i class="fa fa-map-marker"></i>                
+                    </div><!--//icon-->
+                    <div class="content">
+                        <h3 class="title">Как заработать больше?</h3>
+                        <p>Приглашай друзей с помощью промо-кода или ссылки из личного кабинета и получай дополнительный доход от каждого выполненного ими задания. </p>   
+                        <button class="modal-trigger btn btn-link" data-toggle="modal" data-target="#feature-modal-1">Регистрация</button>
+                    </div><!--//content-->               
+                </div><!--//item-->
+            </div><!--//row-->
+            
+       
+                    </div><!--//content-->               
+                </div><!--//item-->
+            </div><!--//row-->
+       </div><!--//container-->
+    </section><!--//features-->
+    <!-- ******STORY****** -->
+    <section id="story" class="story section has-pattern">
+        <div class="container">
+            <div class="row">
+                <div class="content col-md-6 col-sm-6 col-xs-12 text-center">
+                    <h2 class="title">Исполнителю </h2>
+                    <p>Что такое AppTools, для владельцев устройств на базе Android?
+Это лёгкая возможность заработать с помощью Вашего устройства
+Это возможность получения платных приложений абсолютно бесплатно </p>
+                </div><!--//content-->
+          
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//story-->
+    
+
+    <!-- ******HOW****** --> 
+    <section id="how" class="how section has-pattern">
+        <div class="container">
+            <div class="row">
+            	<h1>Раскрутка приложения в Google Play и Apple App Store с оплатой за результат.</h1>  
+            	<p>Что же предлагает VipApp – это взрывной рост инсталов с оценками и отзывами а также их не удаление в течении определенного времени, как результат ваше приложение в короткие сроки вылетает в топ Google Play. У нас фиксированная цена за определенные действия исполнителей. Все исполнители реальные, никаких ботов. </p>
+
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//how-->
+    
+    <!-- ******FAQ****** --> 
+    <section id="faq" class="faq section">
+        <div class="container">
+            <div class="row">
+                <h2 class="title text-center">Вопросы и ответы</h2>
+                <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+                    <div class="item">
+                        <h3 class="question"><i class="fa fa-question-circle"></i>В чём разница между резервом и балансом?</h3>
+                        <p class="answer">Все введенные в систему средства зачисляются на баланс. При создании заказа, средства, которые Заказчик тратит на заказ, не списываются с его аккаунта, а переводятся в резерв. По мере набора Исполнителей в заказ резерв уменьшается по мере принятия Заказчиком присланных заявок Исполнителей.</p>
+                    </div><!--//item-->
+                    <div class="item">
+                        <h3 class="question"><i class="fa fa-question-circle"></i>Как добавить заказ? Расскажите о том, что мне необходимо делать?</h3>
+                        <p class="answer">Чтобы разместить заказ, Вам необходимо перейти в раздел «Мои заказы» - «Создать новый заказ». , после чего нужно заполнить следующие поля: Название приложения, ID приложения, Цена. Так же вы должны прикрепить иконку вашего приложения.</p>
+                    </div><!--//item-->
+                    <div class="item">
+                        <h3 class="question"><i class="fa fa-question-circle"></i>Какова стоимость услуг VipApp? У вас есть прайс-лист?</h3>
+                        <p class="answer">Все цены устанавливаете Вы сами, но важно помнить: если Вы назначите слишком низкую цену за заказ, то Исполнителю он может быть не интересен. В любом случае, Вы всегда можете связаться с нами.</p>
+                    </div><!--//item-->
+                </div><!--//faq-col-->
+                <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+                    <div class="item">
+                        <h3 class="question"><i class="fa fa-question-circle"></i>В чём заключается моя работа как Исполнителя?</h3>
+                        <p class="answer">Вам необходимо как можно более полно заполнить свой профиль и установить приложение «AppTools». Так же рекомендуется полностью прочесть данный FAQ</p>
+                    </div><!--//item-->
+                    <div class="item">
+                        <h3 class="question"><i class="fa fa-question-circle"></i>Зачем мне приложение «VipApp»?</h3>
+                        <p class="answer">Установите приложение «AppTools», перейдите в раздел Заказы и выберите те, в которых бы Вам хотелось принять участие.</p>
+                    </div><!--//item-->
+                    <div class="item">
+                        <h3 class="question"><i class="fa fa-question-circle"></i>В течение какого времени я получу заказанную мной выплату?</h3>
+                        <p class="answer">Выплаты производятся в течение пяти банковских дней. </p>
+                    </div><!--//item-->
+                </div><!--//faq-col-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//faq-->
+
+    <!-- ******CONTACT****** --> 
+    <section id="contact" class="contact section has-pattern">
+        <div class="container">
+            <div class="row text-center">
+                <h2 class="title">Контакты</h2>
+                <div class="intro col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+                    <p></p>
+                    <ul class="list-unstyled contact-details">
+                        <li><i class="fa fa-envelope"></i><a href="mailto:hello@website.com">hello@website.com</a></li>
+                        <li><i class="fa fa-phone-square"></i>0800 123 456</li>
+                    </ul>
+                </div>
+            </div><!--//row-->
+            <div class="row text-center">
+                <div class="contact-form col-md-6 col-sm-12 col-xs-12 col-md-offset-3">                            
+                    <form class="form">                
+                        <div class="form-group name">
+                            <label class="sr-only" for="name">Name</label>
+                            <input id="name" type="text" class="form-control" placeholder="Name:">
+                        </div><!--//form-group-->
+                        <div class="form-group email">
+                            <label class="sr-only" for="email">Email</label>
+                            <input id="email" type="email" class="form-control" placeholder="Email:">
+                        </div><!--//form-group-->
+                        <div class="form-group message">
+                            <label class="sr-only" for="message">Message</label>
+                            <textarea id="message" class="form-control" rows="6" placeholder="Message:"></textarea>
+                        </div><!--//form-group-->
+                        <button type="submit" class="btn btn-lg btn-theme">Send Message</button>
+                    </form><!--//form-->                 
+                </div><!--//contact-form-->
+            </div><!--//row-->
+            <div class="text-center">
+                 <ul class="social-icons list-inline">
+                    <li><a href="#" ><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" ><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" ><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#" ><i class="fa fa-google-plus"></i></a></li>                  
+                </ul><!--//social-icons-->
+            </div><!--//row-->
+        </div><!--//container-->
+    </section><!--//contact-->                        
+                                              
+      
+    <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="container">
+            <small class="copyright pull-left">VipApp &copy; {{year}} <a href="" target="_blank"></a></small>
+            <ul class="links list-inline">
+               <!--<li><a href="#">Terms</a></li>-->
+               <!--<li><a href="#">Privacy</a></li>-->
+            </ul>
+        </div>
+    </footer><!--//footer-->
+
+     
+    <!-- Javascript -->          
+    <script type="text/javascript" src="{% static 'index/assets/plugins/jquery-1.11.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'index/assets/plugins/isMobile/isMobile.min.js' %}"></script>       
+    <script type="text/javascript" src="{% static 'index/assets/plugins/jquery.easing.1.3.js' %}"></script>   
+    <script type="text/javascript" src="{% static 'index/assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>     
+    <script type="text/javascript" src="{% static 'index/assets/plugins/jquery-inview/jquery.inview.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'index/assets/plugins/FitVids/jquery.fitvids.js' %}"></script>
+    <script type="text/javascript" src="{% static 'index/assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js' %}"></script>    
+    <script type="text/javascript" src="{% static 'index/assets/plugins/jquery-placeholder/jquery.placeholder.js' %}"></script>
+    <script type="text/javascript" src="{% static 'index/assets/plugins/flexslider/jquery.flexslider-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/plugins/jquery-match-height/jquery.matchHeight-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/assets/js/main.js' %}"></script>
+    <!--[if !IE]>--> 
+    <script type="text/javascript" src="{% static 'index/assets/js/animations.js' %}"></script> 
+    <!--<![endif]-->         
+</body>
+</html> 
+

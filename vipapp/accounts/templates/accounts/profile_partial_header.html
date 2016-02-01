@@ -1,0 +1,17 @@
+﻿{% if user.is_authenticated %}
+
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="{{ profile.get_mugshot_url }}" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="dashboard_5.html#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ user.username }}</strong>
+                             </span> <span class="text-muted text-xs block">{{ status }}<b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="mailbox.html">Mailbox</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{% url 'userena_signout' %}">Выход</a></li>
+                        </ul>
+                    </div>
+{% endif %}
