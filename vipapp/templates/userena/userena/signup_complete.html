@@ -1,17 +1,29 @@
-{% extends 'userena/base_userena.html' %}
+﻿{% extends 'userena/base_userena.html' %}
 {% load i18n %}
 
 {% block title %}{% trans "Signup almost done!" %}{% endblock %}
 
-{% block content_title %}<h2>{% trans "Signup" %}</h2>{% endblock %}
+{% block content_title %}<h2>{% trans "" %}</h2>{% endblock %}
 
 {% block content %}
-<p>{% trans "Thank you for signing up with us!" %}</p>
+
+<div class="middle-box text-center loginscreen animated fadeInDown">
+    <div>
+        <div>
+            <h1 class="logo-name"></h1>
+        </div>
+
+<p>{% trans "Спасибо за вашу регистрацию!" %}</p>
 
 {% if userena_activation_required %}
-<p>{% blocktrans %}You have been sent an e-mail with an activation link to the supplied email.{% endblocktrans %}</p>
-<p>{% blocktrans %}We will store your signup information for {{ userena_activation_days }} days on our server. {% endblocktrans %}</p>
+<p>{% blocktrans %}Вам было отправлено по электронной почте письмо с ссылкой для активаций.{% endblocktrans %}</p>
+<p>{% blocktrans %}Актвировать вашу запись можно в течений {{ userena_activation_days }} дней. {% endblocktrans %}</p>
 {% else  %}
-<p>{% blocktrans %}You can now use the supplied credentials to signin.{% endblocktrans %}</p>
+<p>{% blocktrans %}Теперь вы можете использовать свой учетные данные для входа.{% endblocktrans %}</p>
 {% endif %}
+
+        </div>
+ </div>
+
+
 {% endblock %}

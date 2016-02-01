@@ -1,4 +1,4 @@
-"""vipapp URL Configuration
+﻿"""vipapp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -16,7 +16,7 @@ from datetime import datetime
 from django.conf.urls import patterns, url, include
 from django.contrib import admin
 from index.forms import BootstrapAuthenticationForm
-from accounts.forms import AuthenticationFormCustom
+from accounts.forms import AuthenticationFormCustom, SignupFormCustom
 
 
 
@@ -30,8 +30,9 @@ urlpatterns = patterns('',
     url(r'', include('social_auth.urls')),
     url(r'^$', 'index.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/', include('userena.urls')),
     url(r'^accounts/signin/', 'userena.views.signin', { 'auth_form': AuthenticationFormCustom}),
+    url(r'^accounts/signup/', 'userena.views.signup', { 'signup_form' : SignupFormCustom}),
+    url(r'^accounts/', include('userena.urls')),
     url(r'^accounts/profile/', include('profiles.urls')),
     url(r'^accounts/moderation/', include('moderation.urls')),
 

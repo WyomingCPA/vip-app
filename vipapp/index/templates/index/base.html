@@ -53,7 +53,18 @@
                 <div class="navbar-collapse collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav">
                        	{% load menubuilder %}{% menu indexMenu %}
-		        {% for item in menuitems %}<li class="nav-item"><a {% if item.url != '/accounts/login/' %} class="scrollto" {% endif %} href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} {% endif %}>{{ item.title }}</a></li>
+		        {% for item in menuitems %}<li class="nav-item"><a 
+                        {% if item.url = '/accounts/login/' %} 
+                        class="" 
+                       {% endif %} 
+                       {% if item.url = '/accounts/profile/' %} 
+                        class="" 
+                       {% endif %} 
+                        {% if item.url = '/accounts/profile/' %} 
+                        class="" 
+                       {% endif %} 
+
+                        href="{{ item.url }}" title="{{ item.title|escape }}"{% if item.current %} {% endif %}>{{ item.title }}</a></li>
 			{% endfor %}
                     </ul><!--//nav-->
                 </div><!--//navabr-collapse-->
