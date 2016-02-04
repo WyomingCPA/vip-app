@@ -45,7 +45,7 @@ SITE_ID = 1
 
 
 VK_APP_ID = '5254025'
-VK_API_SECRET = 'YL1A7wC9TRTYWq0q5fDB'
+VK_API_SECRET = '**********************'
 SOCIAL_AUTH_CREATE_USERS = True
 
 SOCIAL_AUTH_PIPELINE = (
@@ -174,9 +174,9 @@ USE_TZ = True
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'WyomingCPA@yandex.ru'
-EMAIL_HOST_PASSWORD = '!@#$Qwerty83448344qwerty'
-DEFAULT_FROM_EMAIL = 'WyomingCPA@yandex.ru'
+EMAIL_HOST_USER = '***********************'
+EMAIL_HOST_PASSWORD = '*******************'
+DEFAULT_FROM_EMAIL = '********************'
 EMAIL_USE_TLS = True
 
 
